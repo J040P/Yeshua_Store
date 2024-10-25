@@ -1,0 +1,319 @@
+body{
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+header{
+    display: flex;
+    align-items: center;
+    width:100%;
+    top: 0%;
+    left: 0%;
+    position: absolute;
+    z-index: 800;
+    padding: 15px 100px;
+    transition: 0.5s ease;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    gap: 30px;
+}
+header .logo{
+    flex-grow: 1;
+}
+
+header .menu-btn{
+    display: flex;
+    gap: 10px;
+}
+
+header .menu{
+    position: relative;
+
+}
+
+header .menu .itens-menu{
+    display: flex;
+    position: relative;
+    transition: 0.3 ease;
+    gap: 20px;
+}
+header .menu .itens-menu a{
+    position: relative;
+    color: rgb(0, 0, 0);
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    /* margin-left: 30px; */
+    transition: 0.3s ease;
+
+}
+header .menu .itens-menu a:before{
+    content: '';
+    position: absolute;
+    width: 0%;
+    background-color: rgb(255, 255, 255);
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease;
+}
+header .menu .itens-menu a:hover:before{
+    width: 100%;
+}
+svg{
+    width: 30px;
+}
+button{
+    cursor: pointer;
+}
+.icon-cart{
+    position: relative;
+}
+.icon-cart span{
+    background-color: orange;
+    position: absolute;
+    top: -20%;
+    right: -10px;
+    width: 23px;
+    height: 23px;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    font-size: xx-large;
+    padding: 20px;
+    margin: 0%;
+    font-weight: 300;
+}
+.CartTab{
+    z-index: 888;
+    background-color: #353432;
+    color: white;
+    width: 400px;
+    max-width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+}
+
+.CartTab .div_totalPrice{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.CartTab .lay_total{
+    color: black;
+    font-size: 1.5em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.CartTab .totalPrice{
+    color: orange;
+    font-size: 1.5em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.CartTab .btn{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 70px;
+    color: black;
+}
+.CartTab .btn button{
+    background-color: orange;
+    border: none;
+    font-weight: 550;
+    font-size: 1em;
+}
+
+.CartTab .btn button.close{
+    background-color: rgb(206, 206, 206);
+}
+.CartTab .listCart{
+    overflow: auto;
+}
+.CartTab .listCart::-webkit-scrollbar{
+    width: 0;
+}
+.CartTab{
+    right: -400px;
+    transition: 0.5s;
+}
+
+body.activeTabCart .CartTab{
+    right: 0;
+}
+
+#contentTab{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.listProduct .item img{
+    width: 90%;
+}
+
+.listProduct{
+    width: 80%;
+    margin-top: 5%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.listProduct .item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+}
+
+.listProduct .item h2{
+    font-weight: 500;
+    font-size: large;
+}
+
+.listProduct .item .price{
+    letter-spacing: 3px;
+    font-size: small;
+}
+
+.listProduct .item button{
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 5px;
+    border-radius: 20px;
+}
+
+.listCart .item img{
+    width: 100%;
+}
+.listCart .item{
+    display: grid;
+    grid-template-columns: 70px 150px 58px 1fr;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+}
+.listCart .item .quantity{
+    display: flex;
+}
+
+.listCart .item .quantity span{
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    color: #353432;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.listCart .item .quantity span:nth-child(2){
+    background-color: transparent;
+    color:aliceblue ;
+}
+
+@media (max-width:1100px){
+    section {
+        padding: 100px 20px;
+    }
+    header{
+        padding: 12px 20px;
+    }
+}
+@media (max-width: 1040px){
+
+    header .menu {
+        display: none;
+    }
+    header .menu.active{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(1,1,1,0.5);
+    }
+    header .menu .itens-menu a{
+        font-size: 1.2em;
+        margin: 20px;
+        color: aliceblue;
+    }
+    header .menu .itens-menu{
+        background: #000;
+        width: 600px;
+        max-width: 600px;
+        margin: 20px;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 5px 25px rgba(1,1,1,0.5);
+    }
+
+    .menu-btn{
+        background: url("../scr/menu.png")no-repeat;
+        background-size: 30px;
+        background-position: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition: 0.3s ease;
+
+        
+    }
+    .menu-btn.active{
+        z-index: 999;
+        background: url("../scr/tette.png");
+        background-size: 30px;
+        background-position: center;
+        transition: 0.3s ease;
+    }
+}
+@media (max-width: 768px){
+    .listProduct{
+        width: 80%;
+        margin-top: 13%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+}
+@media (max-width: 425px){
+    .listProduct{
+        width: 80%;
+        margin-top: 14%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+}
+@media (max-width: 320px){
+    .listProduct{
+        width: 80%;
+        margin-top: 14%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+
+}
